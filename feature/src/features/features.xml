@@ -4,14 +4,12 @@
 	<!-- Change version of repository accordingly -->
 	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/${uaal.parent.version}/xml/features</repository>
 	
-	<feature name="uaalTutorials-contextPublisher" description="feature to install contextPublisher tutorial"
+	<feature name="uaalTuts-contextPubSubTutorial" description="Feature to install contextPubSubTutorial"
 		version="${pom.version}" resolver='(obr)'>
-	<!-- 
-		<feature>uAAL-Ont.PhWorld</feature>
-		<feature>uAAL-Ont.Measurement</feature>
-	 -->
+
 		<feature>uAAL-Ont.Device</feature>
-		<bundle start-level='100' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPublisherBundle/${project.version}</bundle>
+		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.subBundle/${project.version}</bundle>
+		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.pubBundle/${project.version}</bundle>
 	</feature>
 	
 </features>

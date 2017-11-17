@@ -36,6 +36,9 @@ public class Activator implements ModuleActivator {
 	 * This method is called by the framework to start the module.
 	 */
 	public void start(ModuleContext mc) throws Exception {
+		
+		System.out.println("STARTING : " + this.getClass().getPackage());
+		
 		Activator.mc = mc;
 		if (subscriber == null) {
 			// create our context subscriber
@@ -47,6 +50,8 @@ public class Activator implements ModuleActivator {
 	 * This method is called by the framework to stop the module.
 	 */
 	public void stop(ModuleContext arg0) throws Exception {
+		System.out.println("STOPPING : " + this.getClass().getPackage());
+		
 		if (subscriber != null) {
 			// close our context subscriber and free all resources
 			subscriber.close();

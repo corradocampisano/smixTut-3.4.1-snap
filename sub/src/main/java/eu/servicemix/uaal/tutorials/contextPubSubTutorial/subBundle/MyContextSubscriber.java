@@ -72,6 +72,9 @@ public class MyContextSubscriber extends ContextSubscriber {
 
 	/** @see ContextSubscriber#handleContextEvent(ContextEvent) */
 	public void handleContextEvent(ContextEvent event) {
+		
+		System.out.println("RECEIVING EVENT : " + event.toString());
+		
 		// This method is called when the desired context event is published by
 		// a context publisher. In this example, we simply log the event and its
 		// content.

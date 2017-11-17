@@ -13,7 +13,7 @@
 	<artifactId>contextPubSubTutorial.feature</artifactId>
 	<packaging>jar</packaging>
 
-	<name>universAAL Tutorials Context Bus Publisher - Feature</name>
+	<name>universAAL Tutorials Context Bus PubSub - Feature</name>
 	<description>A minimal version of a context bus publisher</description>
 
 	<properties>

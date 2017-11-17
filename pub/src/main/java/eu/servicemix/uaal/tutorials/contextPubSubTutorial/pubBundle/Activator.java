@@ -40,11 +40,14 @@ import org.universAAL.ontology.device.ValueDevice;
 public class Activator implements ModuleActivator {
 
 	public void start(ModuleContext mc) throws Exception {
+		
+		System.out.println("STARTING : " + this.getClass().getPackage());
+		
 		// Set up the context publisher by providing some information about
 		// ourselves. Especially, we need a URI that uniquely identifies this
 		// component and the provider type (one of: controller, gauge,
 		// reasoner).
-		ContextProvider provInfo = new ContextProvider("urn:org.universAAL.tutorial:tut.provider");
+		ContextProvider provInfo = new ContextProvider("urn:eu.servicemix.uaal.tutorials.contextPubSubTutorial:pubBundle");
 		provInfo.setType(ContextProviderType.controller);
 		ContextPublisher cp = new DefaultContextPublisher(mc, provInfo);
 
@@ -56,6 +59,9 @@ public class Activator implements ModuleActivator {
 		// 100% (= the kitchen light was turned on)
 		ContextEvent evt = new ContextEvent(new LightActuator("urn:org.universAAL.aal_space:KitchenLight"),
 				ValueDevice.PROP_HAS_VALUE, 100);
+		
+		System.out.println("SENDING EVENT : " + evt.toString());
+		
 		cp.publish(evt);
 
 		// Close our context publisher and free all resources. The publisher
@@ -64,5 +70,6 @@ public class Activator implements ModuleActivator {
 	}
 
 	public void stop(ModuleContext arg0) throws Exception {
+		System.out.println("STOPPING : " + this.getClass().getPackage());
 	}
 }

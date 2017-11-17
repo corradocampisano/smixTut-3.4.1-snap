@@ -13,7 +13,7 @@
 	<artifactId>contextPubSubTutorial.subBundle</artifactId>
 	<packaging>bundle</packaging>
 
-	<name>universAAL Tutorials Context Bus Subscriber - Bundle</name>
+	<name>universAAL Tutorials Context Bus PubSub - Subscriber Bundle</name>
 	<description>A minimal version of a context bus subscriber</description>
 
 	<dependencies>

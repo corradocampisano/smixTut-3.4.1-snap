@@ -7,7 +7,7 @@
 
 use git clone:
 
-`git clone https://github.com/universAAL/distro.karaf.git`
+	corrado@powerdesk2:~/uaal$ git clone https://github.com/universAAL/distro.karaf.git
 
 
 double check:
@@ -27,13 +27,13 @@ double check:
 
 the only change is making karaf script executable:
 
-`chmod u+x bin/karaf`
+	corrado@powerdesk2:~/uaal/distro.karaf$ chmod u+x bin/karaf
 
 
 
 ### 2) start a (clean) Karaf instance
 
-    corrado@powerdesk2:~/uaal/distro.karaf$ rm -R data/
+	corrado@powerdesk2:~/uaal/distro.karaf$ rm -R data/
 	corrado@powerdesk2:~/uaal/distro.karaf$ bin/karaf --clean
 	
 	                                                  ':oxxd:                     
@@ -75,9 +75,12 @@ the only change is making karaf script executable:
 
 
 
-### 3) compile and install the tutorial (this one)
+### 3) clone, compile and install the tutorial (this one)
 
-
+	corrado@powerdesk2:~/uaal$ https://github.com/corradocampisano/smixTut-3.4.1-snap.git
+	
+	corrado@powerdesk2:~/uaal$ cd smixTut-3.4.1-snap
+	
 	corrado@powerdesk2:~/uaal/smixTut-3.4.1-snap$ mj8 clean install
 	[INFO] Scanning for projects...
 	...

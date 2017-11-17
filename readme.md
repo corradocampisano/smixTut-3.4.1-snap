@@ -61,25 +61,15 @@ the only change is making karaf script executable:
 	Hit '<ctrl-d>' or 'osgi:shutdown' to shutdown Karaf.
 	
 	karaf@uAAL>
-	-------------------------------------------------------------------
 	GMS: address=b79d4a04-86b3-4bee-bf75-f99ac166e3a4, cluster=mw.modules.aalspace.osgi8888, physical address=192.168.1.100:56029
-	-------------------------------------------------------------------
 	
-	-------------------------------------------------------------------
 	GMS: address=b79d4a04-86b3-4bee-bf75-f99ac166e3a4, cluster=mw.bus.ui.osgi8888, physical address=192.168.1.100:58730
-	-------------------------------------------------------------------
 	
-	-------------------------------------------------------------------
 	GMS: address=b79d4a04-86b3-4bee-bf75-f99ac166e3a4, cluster=mw.brokers.control.osgi8888, physical address=192.168.1.100:38869
-	-------------------------------------------------------------------
 	
-	-------------------------------------------------------------------
 	GMS: address=b79d4a04-86b3-4bee-bf75-f99ac166e3a4, cluster=mw.bus.context.osgi8888, physical address=192.168.1.100:34096
-	-------------------------------------------------------------------
 	
-	-------------------------------------------------------------------
 	GMS: address=b79d4a04-86b3-4bee-bf75-f99ac166e3a4, cluster=mw.bus.service.osgi8888, physical address=192.168.1.100:47434
-	-------------------------------------------------------------------
 	
 	karaf@uAAL>
 
@@ -91,27 +81,28 @@ the only change is making karaf script executable:
 	corrado@powerdesk2:~/uaal/smixTut-3.4.1-snap$ mj8 clean install
 	[INFO] Scanning for projects...
 	...
-	[INFO] ------------------------------------------------------------------------
+	[INFO] 
 	[INFO] Reactor Build Order:
 	[INFO] 
 	[INFO] Tutorial aggregator (bundle and feature)
 	[INFO] universAAL Tutorials Context Bus Publisher - Bundle
 	[INFO] universAAL Tutorials Context Bus Publisher - Feature
 	... 
-	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to /home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/contextPublisherFeature-3.4.1-SNAPSHOT-features.xml
-	[INFO] ------------------------------------------------------------------------
+	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to 
+		/home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/contextPublisherFeature-3.4.1-SNAPSHOT-features.xml
+	[INFO] 
 	[INFO] Reactor Summary:
 	[INFO] 
 	[INFO] Tutorial aggregator (bundle and feature) ........... SUCCESS [  0.145 s]
 	[INFO] universAAL Tutorials Context Bus Publisher - Bundle  SUCCESS [ 15.803 s]
 	[INFO] universAAL Tutorials Context Bus Publisher - Feature SUCCESS [  0.481 s]
-	[INFO] ------------------------------------------------------------------------
+	[INFO] 
 	[INFO] BUILD SUCCESS
-	[INFO] ------------------------------------------------------------------------
+	[INFO] 
 	[INFO] Total time: 16.782 s
 	[INFO] Finished at: 2017-11-17T08:53:32+01:00
 	[INFO] Final Memory: 27M/390M
-	[INFO] ------------------------------------------------------------------------
+	[INFO] 
 
 
 

@@ -1,7 +1,5 @@
 
 
-
-
 ### 1) get Karaf-distro from git repo:
 
 
@@ -22,7 +20,6 @@ double check:
 		modified:   bin/karaf
 	
 	no changes added to commit (use "git add" and/or "git commit -a")
-
 
 
 the only change is making karaf script executable:
@@ -83,59 +80,60 @@ the only change is making karaf script executable:
 	corrado@powerdesk2:~/uaal/smixTut-3.4.1-snap$ mj8 clean install
 	[INFO] Scanning for projects...
 	...
-	[INFO] 
+	[INFO] ------------------------------------------------------------------------
 	[INFO] Reactor Build Order:
 	[INFO] 
 	[INFO] Tutorial aggregator (bundle and feature)
-	[INFO] universAAL Tutorials Context Bus Publisher - Bundle
-	[INFO] universAAL Tutorials Context Bus Publisher - Feature
+	[INFO] universAAL Tutorials Context Bus PubSub - Publisher Bundle
+	[INFO] universAAL Tutorials Context Bus PubSub - Subscriber Bundle
+	[INFO] universAAL Tutorials Context Bus PubSub - Feature
 	... 
-	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to 
-		/home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/contextPublisherFeature-3.4.1-SNAPSHOT-features.xml
-	[INFO] 
+	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to /home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPubSubTutorial.feature/3.4.1-SNAPSHOT/contextPubSubTutorial.feature-3.4.1-SNAPSHOT-features.xml
+	[INFO] ------------------------------------------------------------------------
 	[INFO] Reactor Summary:
 	[INFO] 
-	[INFO] Tutorial aggregator (bundle and feature) ........... SUCCESS [  0.145 s]
-	[INFO] universAAL Tutorials Context Bus Publisher - Bundle  SUCCESS [ 15.803 s]
-	[INFO] universAAL Tutorials Context Bus Publisher - Feature SUCCESS [  0.481 s]
-	[INFO] 
+	[INFO] Tutorial aggregator (bundle and feature) ........... SUCCESS [  2.551 s]
+	[INFO] universAAL Tutorials Context Bus PubSub - Publisher Bundle SUCCESS [ 10.679 s]
+	[INFO] universAAL Tutorials Context Bus PubSub - Subscriber Bundle SUCCESS [  2.155 s]
+	[INFO] universAAL Tutorials Context Bus PubSub - Feature .. SUCCESS [  2.448 s]
+	[INFO] ------------------------------------------------------------------------
 	[INFO] BUILD SUCCESS
-	[INFO] 
-	[INFO] Total time: 16.782 s
-	[INFO] Finished at: 2017-11-17T08:53:32+01:00
-	[INFO] Final Memory: 27M/390M
-	[INFO] 
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time: 22.499 s
+	[INFO] Finished at: 2017-11-17T16:24:50+01:00
+	[INFO] Final Memory: 48M/1102M
+	[INFO] ------------------------------------------------------------------------
 
 
 
 ### 4) Add feature repository:
 
-since the feature got installed locally, we can add the local (mvn:) maven repo:
+since the feature got installed locally, we can add the local (mvn: = maven) feature-repo:
 
-    [INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to 
-    	/home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/contextPublisherFeature-3.4.1-SNAPSHOT-features.xml
+	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/feature/target/features/features.xml to /home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/contextPubSubTutorial.feature/3.4.1-SNAPSHOT/contextPubSubTutorial.feature-3.4.1-SNAPSHOT-features.xml
 
-do this in Karaf:
 
-    karaf@uAAL>feature:repo-add mvn:eu.servicemix.uaal.tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/xml/features 
-    Adding feature url mvn:eu.servicemix.uaal.tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/xml/features
+add the feature-repo in Karaf:
+
+	karaf@uAAL>feature:repo-add mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.feature/3.4.1-SNAPSHOT/xml/features 
+	Adding feature url mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.feature/3.4.1-SNAPSHOT/xml/features
+
 
 
 double check:
 
-    karaf@uAAL>feature:repo-list 
-    Repository                        | URL
-    ------------------------------------------------------------------------------------------------------------------------
-    standard-3.0.8                    | mvn:org.apache.karaf.features/standard/3.0.8/xml/features
-    ...
-    uaalTutorials-Feature             | mvn:eu.servicemix.uaal.tutorials/contextPublisherFeature/3.4.1-SNAPSHOT/xml/features
-    ...
+	karaf@uAAL>feature:repo-list
+	Repository                        | URL                                                                                       
+	------------------------------------------------------------------------------------------------------------------------------
+	...                           
+	uaalTutorials-Feature             | mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.feature/3.4.1-SNAPSHOT/xml/features
+
 
 
 ### 5) install feature:
 
-	karaf@uAAL>feature:install -v uaalTutorials-contextPublisher
-	Installing feature uaalTutorials-contextPublisher 3.4.1-SNAPSHOT
+	karaf@uAAL>feature:install -v uaalTuts-contextPubSubTutorial
+	Installing feature uaalTuts-contextPubSubTutorial 3.4.1-SNAPSHOT
 	Installing feature uAAL-Ont.Device 3.4.1-SNAPSHOT
 	Installing feature uAAL-Ont.Profile 3.4.1-SNAPSHOT
 	Installing feature uAAL-Ont.PhWorld 3.4.1-SNAPSHOT
@@ -149,11 +147,17 @@ double check:
 	Installing bundle mvn:org.universAAL.ontology/ont.unit/3.4.1-SNAPSHOT
 	Installing bundle mvn:org.universAAL.ontology/ont.measurement/3.4.1-SNAPSHOT
 	Installing bundle mvn:org.universAAL.ontology/ont.device/3.4.1-SNAPSHOT
-	Installing bundle mvn:eu.servicemix.uaal.tutorials/contextPublisherBundle/3.4.1-SNAPSHOT
+	Installing bundle mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.subBundle/3.4.1-SNAPSHOT
+	Installing bundle mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.pubBundle/3.4.1-SNAPSHOT
+	STARTING : package eu.servicemix.uaal.tutorials.contextPubSubTutorial.subBundle
+	STARTING : package eu.servicemix.uaal.tutorials.contextPubSubTutorial.pubBundle
+	SENDING EVENT : urn:org.universAAL.middleware.context.rdf:ContextEvent#_:7f000101445e966e:927
+	RECEIVING EVENT : urn:org.universAAL.middleware.context.rdf:ContextEvent#_:7f000101445e966e:927
 
 
 double check:
 
-	karaf@uAAL>list | grep -i publisher
-	101 | Active | 100 | 3.4.1.SNAPSHOT | universAAL Tutorials Context Bus Publisher - Bundle   
+	karaf@uAAL>list | grep -i pubsub
+	101 | Active |  80 | 3.4.1.SNAPSHOT | universAAL Tutorials Context Bus PubSub - Subscriber Bundle 
+	102 | Active |  80 | 3.4.1.SNAPSHOT | universAAL Tutorials Context Bus PubSub - Publisher Bundle     
 

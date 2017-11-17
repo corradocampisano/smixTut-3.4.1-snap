@@ -6,14 +6,14 @@
 
 	<parent>
 		<groupId>eu.servicemix.uaal.tutorials</groupId>
-		<artifactId>contextPublisher</artifactId>
+		<artifactId>contextPubSubTutorial</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>contextPublisherFeature</artifactId>
+	<artifactId>contextPubSubTutorial.feature</artifactId>
 	<packaging>jar</packaging>
 
-	<name>universAAL Tutorials Context Bus Publisher - Feature</name>
+	<name>universAAL Tutorials Context Bus PubSub - Feature</name>
 	<description>A minimal version of a context bus publisher</description>
 
 	<properties>

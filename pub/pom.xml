@@ -6,14 +6,14 @@
 
 	<parent>
 		<groupId>eu.servicemix.uaal.tutorials</groupId>
-		<artifactId>contextPublisher</artifactId>
+		<artifactId>contextPubSubTutorial</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>contextPublisherBundle</artifactId>
+	<artifactId>contextPubSubTutorial.pubBundle</artifactId>
 	<packaging>bundle</packaging>
 
-	<name>universAAL Tutorials Context Bus Publisher - Bundle</name>
+	<name>universAAL Tutorials Context Bus PubSub - Publisher Bundle</name>
 	<description>A minimal version of a context bus publisher</description>
 
 	<dependencies>
@@ -41,7 +41,7 @@
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>org.universAAL.tutorials.context.bus.publisher</Export-Package>
+						<Export-Package>eu.servicemix.uaal.tutorials.contextPubSubTutorial.pubBundle</Export-Package>
 						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
 					</instructions>
 				</configuration>

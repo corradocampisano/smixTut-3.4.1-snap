@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="uaalTutorials-Feature" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<!-- Change version of repository accordingly -->
+	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/${uaal.parent.version}/xml/features</repository>
+	
+	<feature name="uaalTutorials-contextPublisher" description="feature to install contextPublisher tutorial"
+		version="${pom.version}" resolver='(obr)'>
+	<!-- 
+		<feature>uAAL-Ont.PhWorld</feature>
+		<feature>uAAL-Ont.Measurement</feature>
+	 -->
+		<feature>uAAL-Ont.Device</feature>
+		<bundle start-level='100' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPublisherBundle/${project.version}</bundle>
+	</feature>
+	
+</features>

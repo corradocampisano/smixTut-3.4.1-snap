@@ -33,8 +33,7 @@ the only change is making karaf script executable:
 
 ### 2) start a (clean) Karaf instance
 
-	corrado@powerdesk2:~/uaal/distro.karaf$ rm -R data/
-	corrado@powerdesk2:~/uaal/distro.karaf$ bin/karaf --clean
+	corrado@powerdesk2:~/uaal/distro.karaf$ bin/karaf clean
 	
 	                                                  ':oxxd:                     
 	                                             .,cdkOkxdxkO,                    

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
-	<artifactId>contextPublisher</artifactId>
+	<artifactId>contextPubSubTutorial</artifactId>
 	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -23,7 +23,8 @@
 
 
 	<modules>
-		<module>bundle</module>
+		<module>pub</module>
+		<module>sub</module>
 		<module>feature</module>
 	</modules>
 

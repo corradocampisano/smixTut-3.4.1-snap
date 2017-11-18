@@ -10,11 +10,11 @@
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>contextPubSubTutorial.subBundle</artifactId>
+	<artifactId>contextPubSubTutorial.pubBundle</artifactId>
 	<packaging>bundle</packaging>
 
-	<name>universAAL Tutorials Context Bus PubSub - Subscriber Bundle</name>
-	<description>A minimal version of a context bus subscriber</description>
+	<name>contextPubSubTutorial - Publisher Bundle</name>
+	<description>A minimal version of a context bus publisher</description>
 
 	<dependencies>
 		<dependency>
@@ -41,7 +41,7 @@
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>eu.servicemix.uaal.tutorials.contextPubSubTutorial.subBundle</Export-Package>
+						<Export-Package>eu.servicemix.uaal.tutorials.contextPubSubTutorial.pubBundle</Export-Package>
 						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
 					</instructions>
 				</configuration>

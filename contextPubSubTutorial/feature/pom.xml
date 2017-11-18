@@ -13,8 +13,8 @@
 	<artifactId>contextPubSubTutorial.feature</artifactId>
 	<packaging>jar</packaging>
 
-	<name>universAAL Tutorials Context Bus PubSub - Feature</name>
-	<description>A minimal version of a context bus publisher</description>
+	<name>contextPubSubTutorial - Feature</name>
+	<description>A feature to help deploying to Karaf.distro</description>
 
 	<properties>
 		<uaal.parent.version>${project.version}</uaal.parent.version>

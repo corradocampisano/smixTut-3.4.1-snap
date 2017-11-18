@@ -12,12 +12,14 @@
 	</parent>
 
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
-	<artifactId>tutorials.pom</artifactId>
+	<artifactId>smixUaalTutorials.pom</artifactId>
 	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>smix.eu tutorials pom (inherits from official 3.4.1-snap)</name>
-	<description>Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials/tut.pom</description>
+	<name>smixUaalTutorials pom (inherits tut.pom)</name>
+	<description>Parent pom for all smix uAAL tutorials.
+Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials/tut.pom
+</description>
 	<url>https://github.com/corradocampisano/smixTut-3.4.1-snap</url>
 
 	<licenses>

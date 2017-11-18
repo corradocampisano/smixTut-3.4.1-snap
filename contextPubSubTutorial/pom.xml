@@ -6,7 +6,7 @@
 
 	<parent>
 		<groupId>eu.servicemix.uaal.tutorials</groupId>
-		<artifactId>tutorials.pom</artifactId>
+		<artifactId>smixUaalTutorials.pom</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
@@ -15,7 +15,7 @@
 	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>contextPubSubTutorial aggregator (bundles and feature)</name>
+	<name>contextPubSubTutorial - Aggregator</name>
 	<description>...</description>
 	<url>http://www.servicemix.eu/</url>
 

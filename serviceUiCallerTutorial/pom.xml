@@ -5,21 +5,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.universAAL.tutorials</groupId>
-		<artifactId>tut.pom</artifactId>
+		<groupId>eu.servicemix.uaal.tutorials</groupId>
+		<artifactId>smixUaalTutorials.pom</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
-		<relativePath>/home/corrado/uaal/platform-3.4.1-snap/xtras/samples/tutorials/tut.pom</relativePath>
 	</parent>
 
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
-	<artifactId>smixUaalTutorials.pom</artifactId>
+	<artifactId>serviceUiCallerTutorial</artifactId>
+	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>smixUaalTutorials pom (inherits tut.pom)</name>
-	<description>Parent pom for all smix uAAL tutorials.
-Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials/tut.pom
-</description>
-	<url>https://github.com/corradocampisano/smixTut-3.4.1-snap</url>
+	<name>serviceUiCallerTutorial - Aggregator</name>
+	<description>...</description>
+	<url>http://www.servicemix.eu/</url>
 
 	<licenses>
 		<license>
@@ -31,8 +29,8 @@ Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials
 
 
 	<modules>
-		<module>contextPubSubTutorial</module>
-		<module>serviceUiCallerTutorial</module>
+		<module>bundle</module>
+		<module>feature</module>
 	</modules>
 
  

@@ -10,9 +10,7 @@
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>eu.servicemix.uaal.tutorials</groupId>
 	<artifactId>contextPubSubTutorial</artifactId>
-	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>contextPubSubTutorial - Aggregator</name>

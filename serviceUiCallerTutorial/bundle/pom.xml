@@ -3,42 +3,52 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<parent>
 		<groupId>eu.servicemix.uaal.tutorials</groupId>
-		<artifactId>contextPubSubTutorial</artifactId>
+		<artifactId>serviceUiCallerTutorial</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
-
-	<artifactId>contextPubSubTutorial.pubBundle</artifactId>
+	
+	<artifactId>serviceUiCallerTutorial.bundle</artifactId>
 	<packaging>bundle</packaging>
-
-	<name>contextPubSubTutorial - Publisher Bundle</name>
-	<description>A minimal version of a context bus publisher</description>
-
+		
+	<name>serviceUiCallerTutorial - Bundle</name>
+	<description>A minimal version of a ui bus uicaller</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.composite</artifactId>
-			</dependency>
+			<artifactId>mw.bus.service.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.bus.ui.core</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
-			<artifactId>ont.device</artifactId>
-			</dependency>
+			<artifactId>ont.phWorld</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.ontology</groupId>
+			<artifactId>ont.profile</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.container.core</artifactId>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
 				<configuration>
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>eu.servicemix.uaal.tutorials.contextPubSubTutorial.pubBundle</Export-Package>
+						<Export-Package>eu.servicemix.uaal.tutorials.serviceUiCallerTutorial.bundle</Export-Package>
 						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
 					</instructions>
 				</configuration>

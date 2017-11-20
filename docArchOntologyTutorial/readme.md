@@ -33,17 +33,19 @@ TO BE UPDATED BELOW !!!
 
 since the feature got installed locally (mvn: = maven local repo):
 
-	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/serviceUiCallerTutorial/feature/target/features/features.xml to /home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/serviceUiCallerTutorial.feature/3.4.1-SNAPSHOT/serviceUiCallerTutorial.feature-3.4.1-SNAPSHOT-features.xml
+	[INFO] Installing /home/corrado/uaal/smixTut-3.4.1-snap/docArchOntologyTutorial/feature/target/features/features.xml to /home/corrado/.m2/repository/eu/servicemix/uaal/tutorials/docArchOntologyTutorial.feature/3.4.1-SNAPSHOT/docArchOntologyTutorial.feature-3.4.1-SNAPSHOT-features.xml
+
 
  we can add the local (mvn: = maven local repo) feature-repo in Karaf:
 
-	karaf@uAAL>feature:repo-add mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.feature/3.4.1-SNAPSHOT/xml/features
-	Adding feature url mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.feature/3.4.1-SNAPSHOT/xml/features
+	karaf@uAAL>feature:repo-add mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.feature/3.4.1-SNAPSHOT/xml/features
+	Adding feature url mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.feature/3.4.1-SNAPSHOT/xml/features
+
 
 double check:
 
-	karaf@uAAL>feature:repo-list | grep -i uicaller
-	uaalTutorials-Feature             | mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.feature/3.4.1-SNAPSHOT/xml/features
+	karaf@uAAL>feature:repo-list | grep -i docarch
+	uaalTutorials-Feature             | mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.feature/3.4.1-SNAPSHOT/xml/features
 
 
 
@@ -51,30 +53,35 @@ double check:
 
 add "-v" (verbose) to let it show more:
 
-	karaf@uAAL>feature:install -v uaalTuts-serviceUiCallerTutorial
-	Installing feature uaalTuts-serviceUiCallerTutorial 3.4.1-SNAPSHOT
-	Installing feature uAAL-Ont.Profile 3.4.1-SNAPSHOT
-	Installing feature uAAL-Ont.PhWorld 3.4.1-SNAPSHOT
-	Found installed feature uAAL-MW 3.4.1-SNAPSHOT
-	Installing bundle wrap:mvn:jp.go.ipa/jgcl/1.0
-	Installing bundle mvn:org.universAAL.ontology/ont.phWorld/3.4.1-SNAPSHOT
-	Installing bundle mvn:org.universAAL.ontology/ont.profile/3.4.1-SNAPSHOT
-	Installing bundle mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.bundle/3.4.1-SNAPSHOT
-	STARTING : package eu.servicemix.uaal.tutorials.serviceUiCallerTutorial.bundle
-		
+	
+	karaf@uAAL>feature:install -v uaalTuts-docArchOntologyTutorial
+	Installing feature uaalTuts-docArchOntologyTutorial 3.4.1-SNAPSHOT
+	Installing bundle mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.bundle/3.4.1-SNAPSHOT
+	Error executing command: Can't install feature uaalTuts-docArchOntologyTutorial/0.0.0: 	
+	Could not start bundle mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.bundle/3.4.1-SNAPSHOT in feature(s) uaalTuts-docArchOntologyTutorial-3.4.1-SNAPSHOT: Unresolved constraint in bundle docArchOntologyTutorial.bundle [99]: Unable to resolve 99.0: missing requirement [99.0] osgi.wiring.package; (&(osgi.wiring.package=org.universAAL.ontology.device)(version>=3.4.0)(!(version>=4.0.0)))
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-If you had some other tutorial installed, you may get a different message:	
-
-	karaf@uAAL>feature:install -v uaalTuts-serviceUiCallerTutorial
-	Installing feature uaalTuts-serviceUiCallerTutorial 3.4.1-SNAPSHOT
-	Found installed feature uAAL-Ont.Profile 3.4.1-SNAPSHOT
-	Installing bundle mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.bundle/3.4.1-SNAPSHOT
-	STARTING : package eu.servicemix.uaal.tutorials.serviceUiCallerTutorial.bundle
 
 
 double check:
 
-	karaf@uAAL>list | grep -i uicaller
+	karaf@uAAL>list | grep -i docarch
 	103 | Active |  80 | 3.4.1.SNAPSHOT | serviceUiCallerTutorial - Bundle      
 
 

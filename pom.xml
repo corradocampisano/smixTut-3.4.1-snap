@@ -50,6 +50,7 @@ Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials
 	<modules>
 		<module>contextPubSubTutorial</module>
 		<module>serviceUiCallerTutorial</module>
+		<module>docArchOntologyTutorial</module>
 	</modules>
 
 

@@ -6,10 +6,8 @@
 	
 	<feature name="uaalTuts-docArchOntologyTutorial" description="Helper feature to ease Karaf deployment of docArchOntologyTutorial"
 		version="${pom.version}" resolver='(obr)'>
-
-		<feature>uAAL-Ont.Profile</feature>
 				
-		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/serviceUiCallerTutorial.bundle/${project.version}</bundle>
+		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.bundle/${project.version}</bundle>
 	</feature>
 	
 </features>

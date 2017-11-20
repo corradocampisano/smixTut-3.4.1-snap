@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1510761462499
+Build-Jdk: 1.8.0_112
+Built-By: corrado
+Bundle-Description: This example shows how to convert an ontology concep
+ t into its java representation for uAAL
+Bundle-DocURL: http://www.universAAL.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: universAAL Samples Ontology Tutorial Example
+Bundle-SymbolicName: ont.tutorial
+Bundle-Vendor: universAAL Consortium
+Bundle-Version: 3.4.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.universAAL.ontology.tutorial;uses:="org.universAAL.m
+ iddleware.owl,org.universAAL.ontology.device,org.universAAL.middleware.
+ rdf,org.universAAL.ontology.phThing";version="3.4.1.SNAPSHOT"
+Import-Package: org.universAAL.middleware.container;version="[3.4,4)",or
+ g.universAAL.middleware.owl;version="[3.4,4)",org.universAAL.middleware
+ .rdf;version="[3.4,4)",org.universAAL.ontology.device;version="[3.4,4)"
+ ,org.universAAL.ontology.phThing;version="[3.4,4)"
+Tool: Bnd-1.50.0

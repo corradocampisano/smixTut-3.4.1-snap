@@ -1,0 +1,5 @@
+org/universAAL/ontology/tutorial/TutorialOntology.class
+org/universAAL/ontology/tutorial/MyConcept.class
+org/universAAL/ontology/TutorialFactory.class
+org/universAAL/ontology/TutorialActivator.class
+org/universAAL/ontology/tutorial/MyEnumeration.class

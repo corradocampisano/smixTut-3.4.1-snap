@@ -1,56 +1,61 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
+	<parent>
+		<groupId>org.universAAL.ontology</groupId>
+		<artifactId>ont.pom</artifactId>
+		<version>3.4.1-SNAPSHOT</version>
+	</parent>
+
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
-	<artifactId>docArchOntologyTutorial</artifactId>
+	<artifactId>docArchOntologyTutorial.bundle</artifactId>
 	<version>3.4.1-SNAPSHOT</version>
-  </parent>
+	<packaging>bundle</packaging>
 
-  <artifactId>docArchOntologyTutorial.bundle</artifactId>
-  <packaging>bundle</packaging>
+	<name>docArchOntologyTutorial - Bundle</name>
+	<description>This example shows how to convert an ontology concept into its java representation for uAAL</description>
 
-  <name>docArchOntologyTutorial - Bundle</name>
-  <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.data.representation.osgi</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.device</artifactId>
-    </dependency>
-  </dependencies>
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>uaal</id>
-      <name>universAAL Repositories</name>
-      <url>http://depot.universaal.org/maven-repo/releases/</url>
-    </repository>
-  </repositories>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Bundle-Name>${project.name}</Bundle-Name>
-            <Bundle-Description>${project.description}</Bundle-Description>
-            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Export-Package>org.universAAL.ontology.tutorial</Export-Package>
-            <Private-Package>org.universAAL.ontology;-split-package:=first</Private-Package>
-          </instructions>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	<dependencies>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.data.representation.osgi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.ontology</groupId>
+			<artifactId>ont.device</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>uaal</id>
+			<name>universAAL Repositories</name>
+			<url>http://depot.universaal.org/maven-repo/releases/</url>
+		</repository>
+	</repositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-Description>${project.description}</Bundle-Description>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Export-Package>org.universAAL.ontology.tutorial</Export-Package>
+						<Private-Package>org.universAAL.ontology;-split-package:=first</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -5,14 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.universAAL</groupId>
-		<artifactId>uAAL.pom</artifactId>
+		<groupId>eu.servicemix.uaal.tutorials</groupId>
+		<artifactId>smixUaalTutorials.pom</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>eu.servicemix.uaal.tutorials</groupId>
 	<artifactId>docArchOntologyTutorial</artifactId>
-	<version>3.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>docArchOntologyTutorial - Aggregator</name>

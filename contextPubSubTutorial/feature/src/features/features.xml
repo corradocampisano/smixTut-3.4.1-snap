@@ -4,7 +4,7 @@
 	<!-- Change version of repository accordingly -->
 	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/${uaal.parent.version}/xml/features</repository>
 	
-	<feature name="uaalTuts-contextPubSubTutorial" description="Feature to install contextPubSubTutorial"
+	<feature name="uaalTuts-contextPubSubTutorial" description="Helper feature to ease Karaf deployment of contextPubSubTutorial"
 		version="${pom.version}" resolver='(obr)'>
 
 		<feature>uAAL-Ont.Device</feature>

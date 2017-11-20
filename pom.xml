@@ -8,7 +8,6 @@
 		<groupId>org.universAAL.tutorials</groupId>
 		<artifactId>tut.pom</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
-		<relativePath>/home/corrado/uaal/platform-3.4.1-snap/xtras/samples/tutorials/tut.pom</relativePath>
 	</parent>
 
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
@@ -29,13 +28,31 @@ Inherits settings from official uaal/platform-3.4.1-snap/xtras/samples/tutorials
 		</license>
 	</licenses>
 
-
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<id>uaal-snapshots</id>
+			<name>universAAL Snapshot Repositories</name>
+			<url>http://depot.universaal.org/maven-repo/snapshots/</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>uaal</id>
+			<name>universAAL Repositories</name>
+			<url>http://depot.universaal.org/maven-repo/releases/</url>
+		</repository>
+	</repositories>
+	
 	<modules>
 		<module>contextPubSubTutorial</module>
 		<module>serviceUiCallerTutorial</module>
 	</modules>
 
- 
+
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<targetJdk>1.5</targetJdk>

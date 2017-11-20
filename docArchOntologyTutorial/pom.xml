@@ -5,8 +5,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>eu.servicemix.uaal.tutorials</groupId>
-		<artifactId>smixUaalTutorials.pom</artifactId>
+		<groupId>org.universAAL</groupId>
+		<artifactId>uAAL.pom</artifactId>
 		<version>3.4.1-SNAPSHOT</version>
 	</parent>
 

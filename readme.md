@@ -55,7 +55,7 @@ and I will setup an alias for that maven to run with that java:
 
 clone tutorials repo:
 
-	corrado@powerdesk2:~/uaal$ https://github.com/corradocampisano/smixTut-3.4.1-snap.git
+	corrado@powerdesk2:~/uaal$ git clone https://github.com/corradocampisano/smixTut-3.4.1-snap.git
 
 
 move into the root tutorial folder:

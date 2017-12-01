@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>eu.servicemix.uaal.tutorials</groupId>
+		<artifactId>smixUaalTutorials.pom</artifactId>
+		<version>3.4.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>filePollerTutorial</artifactId>
+	<packaging>pom</packaging>
+
+	<name>filePollerTutorial - Aggregator</name>
+	<description>...</description>
+	<url>http://www.servicemix.eu/</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+	<modules>
+		<module>bundle</module>
+		<module>feature</module>
+	</modules>
+
+ 
+	<properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<targetJdk>1.5</targetJdk>
+		<maven.compile.testSource>1.5</maven.compile.testSource>
+		<maven.compile.testTarget>1.5</maven.compile.testTarget>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<camel.version>2.18.4</camel.version>
+	</properties>
+	
+</project>

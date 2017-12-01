@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="uaalTutorials-Feature" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<!-- Change version of repository accordingly -->
+	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/${uaal.parent.version}/xml/features</repository>
+	
+	<repository>mvn:org.apache.camel.karaf/apache-camel/2.18.4/xml/features</repository>
+	
+	<repository>mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.feature/${project.version}/xml/features</repository>
+	
+	
+	<feature name="uaalTuts-filePollerTutorial" description="Helper feature to ease Karaf deployment of filePollerTutorial"
+		version="${pom.version}" resolver='(obr)'>
+
+		<feature version="${camel.version}">camel-core</feature>
+		
+		<!-- adding (explicitly) the "camel-karaf-commands" bundle, useful for debug (not installed by default!) -->
+		<bundle start-level='80' start='true'>mvn:org.apache.camel.karaf/camel-karaf-commands/${camel.version}</bundle>
+		
+		
+		<feature>uaalTuts-docArchOntologyTutorial</feature>
+
+		<bundle start-level='90' start='true'>mvn:eu.servicemix.uaal.tutorials/filePollerTutorial.bundle/${project.version}</bundle>
+	</feature>
+	
+</features>

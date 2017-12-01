@@ -8,6 +8,7 @@
 		version="${pom.version}" resolver='(obr)'>
 
 		<feature>uAAL-Ont.Device</feature>
+		
 		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.subBundle/${project.version}</bundle>
 		<bundle start-level='80' start='true'>mvn:eu.servicemix.uaal.tutorials/contextPubSubTutorial.pubBundle/${project.version}</bundle>
 	</feature>

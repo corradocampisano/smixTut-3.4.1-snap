@@ -12,7 +12,6 @@
 
 	<groupId>eu.servicemix.uaal.tutorials</groupId>
 	<artifactId>docArchOntologyTutorial.bundle</artifactId>
-	<version>3.4.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>docArchOntologyTutorial - Bundle</name>
@@ -63,7 +62,7 @@
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>eu.servicemix.uaal.tutorials.docArchOntologyTutorial</Export-Package>
+						<Export-Package>eu.servicemix.uaal.tutorials.docArchOntologyTutorial.ontology</Export-Package>
 						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
 					</instructions>
 				</configuration>

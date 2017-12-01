@@ -59,33 +59,4 @@ double check:
 	karaf@uAAL>feature:list | grep -i docarch
 	uaalTuts-docArchOntologyTutorial                | 3.4.1-SNAPSHOT   | x         | uaalTutorials-Feature             | Helper feature to ease Karaf deployment of docArch
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-double check:
-
-	karaf@uAAL>list | grep -i docarch
-	103 | Active |  80 | 3.4.1.SNAPSHOT | serviceUiCallerTutorial - Bundle      
-
-
-when closing karaf, you should see these messages:
-
-	karaf@uAAL>^D
-	...
-	STOPPING : package eu.servicemix.uaal.tutorials.serviceUiCallerTutorial.bundle
 

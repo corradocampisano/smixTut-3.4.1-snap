@@ -25,10 +25,6 @@ once done, see the following for deployment instructions.
 
 
 
-TO BE UPDATED BELOW !!!
-
-
-
 ### 1) Add feature repository:
 
 since the feature got installed locally (mvn: = maven local repo):
@@ -53,14 +49,16 @@ double check:
 
 add "-v" (verbose) to let it show more:
 
-	
 	karaf@uAAL>feature:install -v uaalTuts-docArchOntologyTutorial
 	Installing feature uaalTuts-docArchOntologyTutorial 3.4.1-SNAPSHOT
 	Installing bundle mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.bundle/3.4.1-SNAPSHOT
-	Error executing command: Can't install feature uaalTuts-docArchOntologyTutorial/0.0.0: 	
-	Could not start bundle mvn:eu.servicemix.uaal.tutorials/docArchOntologyTutorial.bundle/3.4.1-SNAPSHOT in feature(s) uaalTuts-docArchOntologyTutorial-3.4.1-SNAPSHOT: Unresolved constraint in bundle docArchOntologyTutorial.bundle [99]: Unable to resolve 99.0: missing requirement [99.0] osgi.wiring.package; (&(osgi.wiring.package=org.universAAL.ontology.device)(version>=3.4.0)(!(version>=4.0.0)))
+
+
+double check:
 	
-	
+	karaf@uAAL>feature:list | grep -i docarch
+	uaalTuts-docArchOntologyTutorial                | 3.4.1-SNAPSHOT   | x         | uaalTutorials-Feature             | Helper feature to ease Karaf deployment of docArch
+
 	
 	
 	

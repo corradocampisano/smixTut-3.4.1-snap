@@ -27,6 +27,8 @@ public class PdfProcessor implements Processor {
 		logger.info(exchange.getIn().getBody());
 		logger.info(exchange.getIn().getBody().getClass());
 		
+		logger.info("FILE CONTENT TYPE: " + exchange.getIn().getHeader(Exchange.FILE_CONTENT_TYPE));
+		
 		sendUaalEvent();
 	}
 	

@@ -20,6 +20,7 @@ package eu.servicemix.uaal.tutorials.filePollerTutorial.bundle;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.log4j.Logger;
 import org.universAAL.middleware.container.ModuleActivator;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextPublisher;
@@ -31,18 +32,17 @@ import org.universAAL.middleware.context.owl.ContextProviderType;
  * The module activator handles the starting and stopping of this module. It is
  * similar to the OSGi BundleActivator.
  * 
- * In our case, we simply want to publish a context event, so we do this
- * directly in the start method.
- * 
  * @author Corrado Campisano
  */
 public class Activator implements ModuleActivator {
-
+	
+	Logger logger = Logger.getLogger(this.getClass());
+	
 	ContextPublisher contextPublisher = null;
 	CamelContext camelContext = null;
 
 	public void start(ModuleContext mc) throws Exception {
-		System.out.println("STARTING : " + this.getClass().getPackage());
+		logger.info("STARTING : " + this.getClass().getPackage());
 
 		setupContextPublisher(mc);
 
@@ -51,7 +51,7 @@ public class Activator implements ModuleActivator {
 	}
 
 	public void stop(ModuleContext arg0) throws Exception {
-		System.out.println("STOPPING : " + this.getClass().getPackage());
+		logger.info("STOPPING : " + this.getClass().getPackage());
 
 		// Close our context publisher and free all resources. The publisher
 		// should be re-used if multiple events need to be published.

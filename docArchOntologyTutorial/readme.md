@@ -4,14 +4,12 @@
 
 
 
-
 ## general setup and build instructions
 
 
 see parent (root) project readme for instructions.
 
 those are a prerequisite to run any of the tutorials.
-
 
 
 

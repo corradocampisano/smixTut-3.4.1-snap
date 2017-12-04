@@ -23,8 +23,11 @@ import java.util.Date;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Component;
+import org.apache.camel.ComponentConfiguration;
+import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.file.FileComponent;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.spi.InterceptStrategy;
 import org.universAAL.middleware.container.ModuleActivator;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
@@ -41,7 +44,7 @@ import eu.servicemix.uaal.tutorials.docArchOntologyTutorial.ontology.Document;
  * In our case, we simply want to publish a context event, so we do this
  * directly in the start method.
  * 
- * @author Carsten Stockloew
+ * @author Corrado Campisano
  */
 public class Activator implements ModuleActivator {
 
@@ -51,11 +54,11 @@ public class Activator implements ModuleActivator {
 	public void start(ModuleContext mc) throws Exception {
 
 		System.out.println("STARTING : " + this.getClass().getPackage());
-		
+
 		setupContextPublisher(mc);
-		
+
 		setupCamelContext();
-		camelContext.start();	
+		camelContext.start();
 	}
 
 	public void stop(ModuleContext arg0) throws Exception {
@@ -65,7 +68,7 @@ public class Activator implements ModuleActivator {
 		// should be re-used if multiple events need to be published.
 		if (contextPublisher != null)
 			contextPublisher.close();
-		
+
 		if (camelContext != null)
 			camelContext.stop();
 
@@ -81,18 +84,26 @@ public class Activator implements ModuleActivator {
 		contextPublisher = new DefaultContextPublisher(mc, provInfo);
 	}
 
-	private void setupCamelContext() {
+	private void setupCamelContext() throws Exception {
 		camelContext = new DefaultCamelContext();
-		Component filePoller = new FileComponent();
-		camelContext.addComponent("incomingFiles", filePoller);
-		
-		Component fileSender = new FileComponent();
-		camelContext.addComponent("processedFiles", fileSender);
-		
-		if (3+2==5) {
-			sendEvent();
-		}
-		
+
+		// add our route to the CamelContext
+
+		camelContext.addRoutes(new RouteBuilder() {
+
+			public void configure() {
+
+				String dirSource = "/home/corrado/uaal/RUNDIR/NEW";
+				String dirTarget = "/home/corrado/uaal/RUNDIR/ARK";
+				//String fileName = "*.pdf";
+				//String fromEndpoint = String.format("file://%s?fileName=%s", dirSource, fileName);
+				String fromEndpoint = String.format("file://%s", dirSource);
+				//String toEndpoint = String.format("file://%s?fileName=%s", dirTarget, fileName);
+				String toEndpoint = String.format("file://%s", dirTarget);
+				
+				from(fromEndpoint).to(toEndpoint);
+			}
+		});
 	}
 
 	private void sendEvent() {

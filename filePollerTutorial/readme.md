@@ -4,14 +4,12 @@
 
 
 
-
 ## general setup and build instructions
 
 
 see parent (root) project readme for instructions.
 
 those are a prerequisite to run any of the tutorials.
-
 
 
 
@@ -37,15 +35,13 @@ add the feature repository for Camel this way:
 double check:
 
 	karaf@uAAL>feature:list | grep -i camel
-	xml-specs-api                                   | 1.9.0            |           | camel-2.9.0                       |  
-	camel                                           | 2.9.0            |           | camel-2.9.0                       |   
-	camel-core                                      | 2.9.0            |           | camel-2.9.0                       |   
+	xml-specs-api                | 1.9.0            |           | camel-2.9.0                       |  
+	camel                        | 2.9.0            |           | camel-2.9.0                       |   
+	camel-core                   | 2.9.0            |           | camel-2.9.0                       |   
 	...
-	camel-zookeeper                                 | 2.9.0            |           | camel-2.9.0                       |   
+	camel-zookeeper              | 2.9.0            |           | camel-2.9.0                       |   
 
 once the Camel feature repo is configured, the tutorial feature can reference it.
-
-
 
 
 
@@ -67,8 +63,6 @@ double check:
 
 	karaf@uAAL>feature:repo-list | grep -i filepoll
 	uaalTutorials-Feature             | mvn:eu.servicemix.uaal.tutorials/filePollerTutorial.feature/3.4.1-SNAPSHOT/xml/features
-
-
 
 
 

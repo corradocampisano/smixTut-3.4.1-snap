@@ -18,24 +18,14 @@
  */
 package eu.servicemix.uaal.tutorials.filePollerTutorial.bundle;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.apache.camel.CamelContext;
-import org.apache.camel.Component;
-import org.apache.camel.ComponentConfiguration;
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.file.FileComponent;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.camel.spi.InterceptStrategy;
 import org.universAAL.middleware.container.ModuleActivator;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.DefaultContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
-import eu.servicemix.uaal.tutorials.docArchOntologyTutorial.ontology.Document;
 
 /**
  * The module activator handles the starting and stopping of this module. It is
@@ -52,7 +42,6 @@ public class Activator implements ModuleActivator {
 	CamelContext camelContext = null;
 
 	public void start(ModuleContext mc) throws Exception {
-
 		System.out.println("STARTING : " + this.getClass().getPackage());
 
 		setupContextPublisher(mc);
@@ -84,58 +73,11 @@ public class Activator implements ModuleActivator {
 		contextPublisher = new DefaultContextPublisher(mc, provInfo);
 	}
 
+	
 	private void setupCamelContext() throws Exception {
 		camelContext = new DefaultCamelContext();
 
-		// add our route to the CamelContext
-
-		camelContext.addRoutes(new RouteBuilder() {
-
-			public void configure() {
-
-				String dirSource = "/home/corrado/uaal/RUNDIR/NEW";
-				String dirTarget = "/home/corrado/uaal/RUNDIR/ARK";
-				//String fileName = "*.pdf";
-				//String fromEndpoint = String.format("file://%s?fileName=%s", dirSource, fileName);
-				String fromEndpoint = String.format("file://%s", dirSource);
-				//String toEndpoint = String.format("file://%s?fileName=%s", dirTarget, fileName);
-				String toEndpoint = String.format("file://%s", dirTarget);
-				
-				from(fromEndpoint).to(toEndpoint);
-			}
-		});
-	}
-
-	private void sendEvent() {
-
-		// Create a context event telling the system that the brightness of a
-		// light source has changed. According to the device ontology the event
-		// describes a triple of the form:
-		// LightActuator hasValue x
-		// In this example, the brightness of the kitchen light was dimmed to
-		// 100% (= the kitchen light was turned on)
-		/*
-		 * ContextEvent evt = new ContextEvent(new
-		 * LightActuator("urn:org.universAAL.aal_space:KitchenLight"),
-		 * ValueDevice.PROP_HAS_VALUE, 100);
-		 */
-
-		Document document = new Document("urn:eu.servicemix.uaal.tutorials.filePollerTutorial:MokedDocumentHashMap");
-		document.setDocumentURL("nowhere");
-		document.setDocumentMimetype("pdf");
-		document.setDocumentMd5("123456789012345678900123456789012345678901234567890012345678901234");
-
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-mm-dd_hh:mm:ss");
-		Date now = new Date();
-		String ts = sdf.format(now);
-
-		document.setImportTimestamp(ts);
-
-		String predicate = "mockDocImportedOn";
-		ContextEvent evt = new ContextEvent(document, predicate, ts);
-
-		System.out.println("SENDING EVENT : " + evt.toString());
-
-		contextPublisher.publish(evt);
+		// add our route to the CamelContext, link to uaalContextPublisher
+		camelContext.addRoutes(new ContentBasedFileMover(contextPublisher));
 	}
 }

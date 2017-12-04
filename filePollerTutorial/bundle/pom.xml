@@ -15,23 +15,31 @@
 
 	<name>filePollerTutorial - Bundle</name>
 	<description>A file poller driven context bus publisher</description>
-	  
-    
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.composite</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>eu.servicemix.uaal.tutorials</groupId>
 			<artifactId>docArchOntologyTutorial.bundle</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		
 		<dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

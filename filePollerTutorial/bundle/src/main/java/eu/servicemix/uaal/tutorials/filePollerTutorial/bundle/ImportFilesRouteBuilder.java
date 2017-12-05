@@ -5,13 +5,13 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.log4j.Logger;
 import org.universAAL.middleware.context.ContextPublisher;
 
-public class ContentBasedFileMover extends RouteBuilder {
+public class ImportFilesRouteBuilder extends RouteBuilder {
 	
 	Logger logger = Logger.getLogger(this.getClass());
 	
 	ContextPublisher contextPublisher;
 	
-	public ContentBasedFileMover(ContextPublisher cp) {
+	public ImportFilesRouteBuilder(ContextPublisher cp) {
 		this.contextPublisher = cp;
 	}
 

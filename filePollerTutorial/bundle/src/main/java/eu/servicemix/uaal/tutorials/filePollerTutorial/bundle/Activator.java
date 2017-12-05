@@ -78,6 +78,6 @@ public class Activator implements ModuleActivator {
 		camelContext = new DefaultCamelContext();
 
 		// add our route to the CamelContext, link to uaalContextPublisher
-		camelContext.addRoutes(new ContentBasedFileMover(contextPublisher));
+		camelContext.addRoutes(new ImportFilesRouteBuilder(contextPublisher));
 	}
 }
